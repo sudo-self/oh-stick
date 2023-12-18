@@ -12,7 +12,16 @@ How to create PWA
 
 4. convert with pre-cache
 
-5. PWA
+5. PWA JS
+
+  ,,,
+if ("serviceWorker" in navigator) {
+  // register service worker
+  navigator.serviceWorker.register("service-worker.js");
+}
+'''
+
+
 
 npm install --global sw-precache
 
@@ -31,13 +40,7 @@ myscript.js
 npm install -g cli-real-favicon
 
 <code>
-  ,,,
-  
-if ("serviceWorker" in navigator) {
-  // register service worker
-  navigator.serviceWorker.register("service-worker.js");
-}
-'''
+
 </code>
 converting project to PWA with npm 
 
