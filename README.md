@@ -1,5 +1,6 @@
 # <a href="https://sudo-self.github.io/oh-stick/">oh-stick</a>&nbsp;
-![contract](https://github.com/sudo-self/oh-stick/assets/119916323/7d5d53ef-a8e0-456a-891c-32afc0e12f06)<hr>
+![contract](https://github.com/sudo-self/oh-stick/assets/119916323/7d5d53ef![android-chrome-512x512](https://github.com/sudo-self/oh-stick/assets/119916323/304835c6-4044-4c7d-9a2d-3b4fbdc709da)
+-a8e0-456a-891c-32afc0e12f06)<hr>
 
 
 How to create PWA
