@@ -1,4 +1,4 @@
-# oh-stick
+# <a href="https://sudo-self.github.io/oh-stick/">oh-stick</a>
 notes by Jesse
 ![contract](https://github.com/sudo-self/oh-stick/assets/119916323/7d5d53ef-a8e0-456a-891c-32afc0e12f06)<hr>
 
