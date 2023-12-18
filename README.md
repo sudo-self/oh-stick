@@ -59,7 +59,7 @@ PWA!
 
 npm i @bubblewrap/cli
 
-bubblewrap init --manifest https://github.com/sudo-self/oh-stick/manifest.json
+bubblewrap init --manifest <code>https://github.com/sudo-self/oh-stick/manifest.json</code>
 
 <img width="889" alt="Screenshot 2023-12-18 at 6 48 35 AM" src="https://github.com/sudo-self/oh-stick/assets/119916323/a2e6e9ed-626a-4e4c-9b5a-f40a88b2ec3f"><br>
 
