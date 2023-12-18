@@ -14,15 +14,11 @@ How to create PWA
 
 5. myscipt.js
 
-  <code>
-  
-    
+  <code> 
 if ("serviceWorker" in navigator) {
   // register service worker
   navigator.serviceWorker.register("service-worker.js");
-}
-
-  </code>
+}</code>
 
 
 manifest.json
@@ -30,7 +26,7 @@ manifest.json
  {
   "name": "oh-stick",
   "short_name": "oh-stick",
-  "start_url": "index.html",
+  "start_url": "https://oh-stick.pages.dev/#",
   "scope": "./",
   "icons": [
     {
