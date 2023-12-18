@@ -15,11 +15,13 @@ How to create PWA
 5. myscipt.js
 
   <code>
+  
     
 if ("serviceWorker" in navigator) {
   // register service worker
   navigator.serviceWorker.register("service-worker.js");
 }
+
   </code>
 
 
@@ -57,8 +59,6 @@ sw-precache
 PWA!
 
 npm i @bubblewrap/cli
-
-bubblewrap init --manifest
 
 bubblewrap init --manifest https://d2563cab.oh-stick.pages.dev/manifest.json  
 
