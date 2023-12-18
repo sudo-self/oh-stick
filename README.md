@@ -1,4 +1,5 @@
 # <a href="https://sudo-self.github.io/oh-stick/">oh-stick</a>&nbsp;
+
 ![contract](https://github.com/sudo-self/oh-stick/assets/119916323/7d5d53ef)
 
 
@@ -6,7 +7,9 @@ How to create PWA
 
 [Oh-Stick!](https://oh-stick.vercel.app/)
 
-1. create manifest.json<img width="1165" alt="Screenshot 2023-12-18 at 8 08 23 AM" src="https://github.com/sudo-self/oh-stick/assets/119916323/81087a35-fcb2-4465-aa43-efee1b8a1cd5">
+1. create manifest.json<vr>
+
+<img width="1165" alt="Screenshot 2023-12-18 at 8 08 23 AM" src="https://github.com/sudo-self/oh-stick/assets/119916323/81087a35-fcb2-4465-aa43-efee1b8a1cd5">
 
 <img width="1020" alt="Screenshot 2023-12-18 at 8 01 11 AM" src="https://github.com/sudo-self/oh-stick/assets/119916323/85c28ac0-6797-4dca-8425-638da409cef6">
 
