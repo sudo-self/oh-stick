@@ -8,7 +8,7 @@ How to create PWA
 
 2. link .json inside index.html
 
-2. add a js service (app works offline)
+2. add a js service script (app works offline)
 
 4. convert with pre-cache
 
@@ -22,7 +22,6 @@ if ("serviceWorker" in navigator) {
 }
   </code>
 
-<hr>
 
 manifest.json
  
