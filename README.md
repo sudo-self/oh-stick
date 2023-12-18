@@ -58,7 +58,13 @@ PWA!
 
 npm i @bubblewrap/cli
 
-bubblewrap init --manifest <code>https://github.com/sudo-self/oh-stick/manifest.json</code>
+bubblewrap init --manifest
+
+bubblewrap init --manifest https://d2563cab.oh-stick.pages.dev/manifest.json  
+
+[ICON 512X512](https://bucket.jessejesse.com/android-chrome-512x512.png)
+
+bubblewrap build
 
 <img width="889" alt="Screenshot 2023-12-18 at 6 48 35 AM" src="https://github.com/sudo-self/oh-stick/assets/119916323/a2e6e9ed-626a-4e4c-9b5a-f40a88b2ec3f"><br>
 
@@ -70,6 +76,7 @@ contract.png = App icon
 
 
 <hr>
+
 
 faviconDescription.json
 
