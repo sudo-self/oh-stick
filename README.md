@@ -62,16 +62,11 @@ bubblewrap init --manifest <code>https://github.com/sudo-self/oh-stick/manifest.
 
 <img width="889" alt="Screenshot 2023-12-18 at 6 48 35 AM" src="https://github.com/sudo-self/oh-stick/assets/119916323/a2e6e9ed-626a-4e4c-9b5a-f40a88b2ec3f"><br>
 
-
-
 ## Favicon
 
 npm install -g cli-real-favicon
 
 contract.png = App icon
-
-npm install -g cli-real-favicon
-
 
 
 <hr>
