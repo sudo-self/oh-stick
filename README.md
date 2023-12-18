@@ -20,13 +20,32 @@ sw-precache
 
 npm install -g cli-real-favicon
 
+contract.png = App icon
+
+link manifest.json inside idex.html
+
+link rel="manifest" href="manifest.json"
+
+myscript.js 
+
+npm install -g cli-real-favicon
+
+<code>
+  ,,,
+  
+if ("serviceWorker" in navigator) {
+  // register service worker
+  navigator.serviceWorker.register("service-worker.js");
+}
+'''
+</code>
+converting project to PWA with npm 
+
+run in terminal from the root directory of project
 
 
-
-
-// contract.png = App icon //
-
-{
+ 
+ {
   "name": "oh-stick",
   "short_name": "oh-stick",
   "start_url": "index.html",
@@ -48,41 +67,11 @@ npm install -g cli-real-favicon
   "display": "standalone"
 }
 
-// link manifest.json inside idex.html //
-
-<link rel="manifest" href="manifest.json">
-
-
-// script.js //
-
-
-if ("serviceWorker" in navigator) {
-  // register service worker
-  navigator.serviceWorker.register("service-worker.js");
-}
-
-
-
-// converting project to PWA with npm 
-// run in terminal from the root directory of project
-
-npm install --global sw-precache
-
-sw-precache
-
-
-
-
-
-
-
-
-
 
 
 //  favorite icons // 
 
-npm install -g cli-real-favicon
+
 
 faviconDescription.json
 
