@@ -22,21 +22,7 @@ if ("serviceWorker" in navigator) {
 }
   </code>
 
-
-npm install --global sw-precache
-
-sw-precache
-
- PWA! Complete
-
-
-## Favicon
-
-npm install -g cli-real-favicon
-
-contract.png = App icon
-
-npm install -g cli-real-favicon
+<hr>
 
 manifest.json
  
@@ -61,6 +47,23 @@ manifest.json
   "background_color": "#333",
   "display": "standalone"
 }
+<br>
+npm install --global sw-precache
+
+sw-precache
+
+ PWA! Complete
+
+
+## Favicon
+
+npm install -g cli-real-favicon
+
+contract.png = App icon
+
+npm install -g cli-real-favicon
+
+
 <hr>
 
 faviconDescription.json
