@@ -1,7 +1,7 @@
 {
   "name": "Stick-it Notes by Tharun",
   "short_name": "Stick-it",
-  "start_url": "index.html",
+  "start_url": "https:/oh-stick.pages.dev/",
   "scope": "./",
   "icons": [
     {
