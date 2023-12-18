@@ -27,18 +27,16 @@ npm install --global sw-precache
 
 sw-precache
 
+ PWA! Complete
+
+
+## Favicon
+
 npm install -g cli-real-favicon
 
 contract.png = App icon
 
-link manifest.json inside idex.html
-
-< link rel="manifest" href="manifest.json"
-
 npm install -g cli-real-favicon
-
-converting project to PWA with npm 
-
 
 manifest.json
  
