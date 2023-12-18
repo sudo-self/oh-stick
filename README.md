@@ -4,6 +4,8 @@
 
 How to create PWA
 
+[Oh-Stick!](https://oh-stick.vercel.app/)
+
 1. create manifest.json
 
 2. link .json inside index.html
@@ -46,13 +48,13 @@ manifest.json
 }
 <br>
 
-Command Line 
-
 npm install --global sw-precache
 
 sw-precache
 
-PWA!
+TWA
+
+APP
 
 npm i @bubblewrap/cli
 
