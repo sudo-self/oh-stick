@@ -12,15 +12,15 @@ How to create PWA
 
 4. convert with pre-cache
 
-5. PWA JS
+5. myscipt.js
 
-  ,,,
+  <code>
+    
 if ("serviceWorker" in navigator) {
   // register service worker
   navigator.serviceWorker.register("service-worker.js");
 }
-'''
-
+  </code>
 
 
 npm install --global sw-precache
@@ -33,20 +33,14 @@ contract.png = App icon
 
 link manifest.json inside idex.html
 
-link rel="manifest" href="manifest.json"
-
-myscript.js 
+< link rel="manifest" href="manifest.json"
 
 npm install -g cli-real-favicon
 
-<code>
-
-</code>
 converting project to PWA with npm 
 
-run in terminal from the root directory of project
 
-
+manifest.json
  
  {
   "name": "oh-stick",
@@ -69,12 +63,7 @@ run in terminal from the root directory of project
   "background_color": "#333",
   "display": "standalone"
 }
-
-
-
-//  favorite icons // 
-
-
+<hr>
 
 faviconDescription.json
 
