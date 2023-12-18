@@ -1,0 +1,23 @@
+{
+  "name": "oh-stick",
+  "version": "1.0.0",
+  "description": "sticky-colorful-reminders",
+  "main": "myscripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sw-precache": "sw-precache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudo-self/oh-stick.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudo-self/oh-stick/issues"
+  },
+  "homepage": "https://github.com/sudo-self/oh-stick#readme",
+  "dependencies": {
+    "sw-precache": "^5.2.1"
+  }
+}
