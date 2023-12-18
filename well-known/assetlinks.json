@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.vercel.app.oh_stick",
+    "sha256_cert_fingerprints":
+    ["FF:97:FD:A0:1D:A2:4D:93:90:CE:96:4B:24:39:42:6E:3D:A1:4C:B3:F7:8B:94:4E:52:84:32:1B:E2:01:C8:BF"]
+  }
+}]
