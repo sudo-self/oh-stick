@@ -1,8 +1,5 @@
 # <a href="https://sudo-self.github.io/oh-stick/">oh-stick</a>&nbsp;
 
-![contract](https://github.com/sudo-self/oh-stick/assets/119916323/7d5d53ef)
-
-
 How to create PWA
 
 [Oh-Stick!](https://oh-stick.vercel.app/)
