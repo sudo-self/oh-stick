@@ -48,11 +48,14 @@ manifest.json
   "display": "standalone"
 }
 <br>
+
+Command Line 
+
 npm install --global sw-precache
 
 sw-precache
 
- PWA! Complete
+PWA!
 
 
 ## Favicon
