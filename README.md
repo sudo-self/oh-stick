@@ -1,8 +1,9 @@
 # oh-stick
-## notes by Jesse
+notes by Jesse
+![contract](https://github.com/sudo-self/oh-stick/assets/119916323/7d5d53ef-a8e0-456a-891c-32afc0e12f06)<hr>
 
 
-How to create an APP from any project
+How to create PWA
 
 1. create manifest.json
 
