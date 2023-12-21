@@ -3,4 +3,4 @@
 [Oh-Stick!](https://oh-stick.vercel.app/)
 
 [Deploy]
-](https://vercel.com/new/clone?repository-url=https://sudo-self.github.io/oh-stick/)
+(https://vercel.com/new/clone?repository-url=https://sudo-self.github.io/oh-stick/)
