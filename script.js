@@ -1,178 +1,108 @@
-// to do:
-// Element.setPointerCapture()
-// Element.releasePointerCapture()
-// https://developer.mozilla.org/fr/docs/Web/API/Element/setPointerCapture
+if ("serviceWorker" in navigator) {
+  // register service worker
+  navigator.serviceWorker.register("service-worker.js");
+}
 
-const eggContainer = document.querySelector('.egg-container');
-const egg = document.querySelector('.egg');
-const eggTop = document.querySelector('.egg-top');
-const timeRuler = document.querySelector('.time-ruler-faces-container');
-const timeContainer = document.querySelector('.time-container');
-const timerButton = document.querySelector('.timer-button');
-const minuteDegreeInterval = 6;
-const secondDegreeInterval = minuteDegreeInterval / 60;
-let timerInterval;
+var itemList = document.getElementById("notes");
 
-const timerWindingSound = new Howl({
-  src: ['https://assets.codepen.io/4175254/timer-winding_1.mp3'],
-});
+itemList.addEventListener("click", removeItem);
 
-const timerAlarmSound = new Howl({
-  src: ['https://assets.codepen.io/4175254/timer-alarm.mp3'],
-});
+let count = Number(window.localStorage.getItem("count"));
+if (!count) {
+  window.localStorage.setItem("count", "0");
+}
 
-const timerTickingSound = new Howl({
-  src: ['https://assets.codepen.io/4175254/timer-ticking.mp3'],
-  loop: true,
-});
+console.log(count);
 
-const closeTimer = () => {
-  eggContainer.classList.remove('active');
-  eggContainer.addEventListener('click', openTimer);
-  document.removeEventListener('click', closeTimer);
-};
-
-const handleClickOutside = (e) => {
-  if (!e.target.closest('.egg, .timer-button') && !timerAlarmSound.playing()) {
-    document.addEventListener('pointerup', (e) => {
-      if (!e.target.closest('.egg, .timer-button')) {
-        eggContainer.classList.remove('active');
-        document.removeEventListener('pointerdown', handleClickOutside);
-      }
-    }, { once: true });
+let createNote = (noteTitle, noteBody) => {
+  if (count > 0) {
+    document.getElementById("no-notes").className = "hidden";
   }
+
+  var li = document.createElement("li");
+  var a = document.createElement("a");
+  var h2 = document.createElement("h2");
+  var p = document.createElement("p");
+  var ul = document.getElementById("notes");
+
+  let xButton = document.createElement("button");
+  xButton.classList.add("delete");
+  let xText = document.createTextNode("X");
+  let h2TN = document.createTextNode(noteTitle);
+  let pTN = document.createTextNode(noteBody);
+
+  h2.appendChild(h2TN);
+  p.appendChild(pTN);
+  xButton.appendChild(xText);
+
+  a.appendChild(h2);
+  a.appendChild(xButton);
+  a.appendChild(p);
+  a.setAttribute("href", "#");
+
+  li.appendChild(a);
+  ul.appendChild(li);
 };
 
-const isTimerOpen = () => eggContainer.classList.contains('active');
-
-const openTimer = (e) => {
-  e.stopPropagation();
-  if (isTimerOpen() || timerAlarmSound.playing()) return;
-  eggContainer.classList.add('active');
-  document.addEventListener('pointerdown', handleClickOutside);
-};
-
-egg.addEventListener('click', openTimer);
-
-const isTimerRunning = () => !!timerInterval;
-
-const pauseTimer = () => {
-  timerTickingSound.pause();
-  clearInterval(timerInterval);
-};
-
-const stopTimer = () => {
-  pauseTimer();
-  timerInterval = null;
-  timerButton.textContent = 'Start';
-  timerButton.classList.remove('stop');
-};
-
-const resumeTimer = () => {
-  timerTickingSound.play();
-  timerInterval = setInterval(() => {
-    const currentRotation = getTimeRulerRotation();
-    if ((currentRotation + secondDegreeInterval) >= 0) {
-      egg.classList.add('ringing');
-      updateTime(0);
-      stopTimer();
-      
-      timerAlarmSound.once('end', () => {
-        egg.classList.remove('ringing');
-      });
-      
-      timerAlarmSound.play();
-      navigator.vibrate?.(timerAlarmSound.duration() * 1000);
-      timerButton.disabled = true;
-      
-      return;
-    };
-    const newRotation = currentRotation + secondDegreeInterval;
-    timeRuler.style.setProperty('--rotation', `${newRotation}deg`);
-    const translation = parseFloat(getComputedStyle(eggTop).getPropertyValue('--background-translation'));
-    const newTranslation = translation + (12 / 10);
-    eggTop.style.setProperty('--background-translation', `${newTranslation}px`);
-    updateTime(newRotation);
-  }, 1000);
-};
-
-const startTimer = () => {
-  resumeTimer();
-  timerButton.textContent = 'Stop';
-  timerButton.classList.add('stop');
-};
-
-const getTimeRulerRotation = () => {
-  return parseFloat(getComputedStyle(timeRuler).getPropertyValue('--rotation'));
-};
-
-const getAdjustedTimeRulerRotation = (timeRulerRotation = getTimeRulerRotation()) => { 
-  const minRotation = -360;
-  const maxRotation = 0;
-  const adjustedRotation = Math.max(minRotation, Math.min(maxRotation, Math.round(timeRulerRotation / minuteDegreeInterval) * minuteDegreeInterval));
-  return adjustedRotation;
-};
-
-const adjustTimeRulerRotation = () => {
-  timeRuler.style.setProperty('--rotation', `${getAdjustedTimeRulerRotation()}deg`);
-};
-
-const updateTime = (rotation) => {
-  const totalSeconds = Math.round(Math.abs(rotation / secondDegreeInterval));
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = Math.floor(totalSeconds % 60);
-  const formattedMinutes = String(minutes).padStart(2, '0');
-  const formattedSeconds = String(seconds).padStart(2, '0');
-  timeContainer.textContent = hours ? `${hours}:${formattedMinutes}:${formattedSeconds}` : `${minutes}:${formattedSeconds}`;
-};
-
-let lastRotation = 0;
-
-eggTop.addEventListener('pointerdown', (e) => {
+let createNoteFromInput = (e) => {
   e.preventDefault();
-  if (!isTimerOpen() || timerAlarmSound.playing()) return;
-  const startX = e.clientX;
-  const startAngle = getTimeRulerRotation();
-  eggTop.classList.add('dragged');
-  if (isTimerRunning()) pauseTimer();
-  
-  const pointerMoveHandler = (e) => {
-    e.preventDefault();
-    const deltaX = e.clientX - startX;
-    const angle = deltaX / 2;
-    const endAngle = startAngle + angle;
-    timeRuler.style.setProperty('--rotation', `${endAngle}deg`);
-    const adjustedRotation = getAdjustedTimeRulerRotation(endAngle);
-    eggTop.style.setProperty('--background-translation', `${deltaX}px`);
-    updateTime(adjustedRotation);
-    
-    if (!isTimerRunning()) {    
-      timerButton.disabled = adjustedRotation >= 0;
+  var noteTitle = document.getElementById("new-note-title-input").value;
+  var noteBody = document.getElementById("new-note-body-input").value;
+
+  document.getElementById("new-note-title-input").value = "";
+  document.getElementById("new-note-body-input").value = "";
+
+  console.log("yes");
+  if (!noteTitle || !noteBody) {
+    alert("Both Title and body of the note must be provided");
+    return;
+  }
+  count += 1;
+  window.localStorage.setItem("count", count);
+
+  while (window.localStorage.getItem(noteTitle)) {
+    noteTitle = noteTitle + " - 1";
+  }
+  window.localStorage.setItem(noteTitle, noteBody);
+
+  createNote(noteTitle, noteBody);
+};
+
+function removeItem(e) {
+  //console.log('2');
+  if (e.target.classList.contains("delete")) {
+    console.log(e);
+    if (
+      confirm(
+        "Remove Magna Core?" +
+          e.target.previousElementSibling.innerText +
+          '" Are you Sure?'
+      )
+    ) {
+      //grab the parent
+      // console.log(e.target.previousSibling.data);
+      var li = e.target.parentElement.parentElement;
+
+      itemList.removeChild(li);
+      count -= 1;
+      window.localStorage.setItem("count", count);
+      window.localStorage.removeItem(e.target.previousElementSibling.innerText);
+      if (count < 1) {
+        document.getElementById("no-notes").className = "";
+      }
     }
-    
-    if (Math.abs(adjustedRotation - lastRotation) >= 6) {
-      timerWindingSound.play();
-      navigator.vibrate?.(50);
-      lastRotation = adjustedRotation;
-    }
-  };
+  }
+}
 
-  const pointerUpHandler = () => {
-    eggTop.classList.remove('dragged');
-    if (isTimerRunning()) resumeTimer();
-    adjustTimeRulerRotation();
-    const translation = parseFloat(getComputedStyle(eggTop).getPropertyValue('--background-translation'));
-    const adjustedTranslation = Math.max(0, Math.min(-720, Math.round(translation / 12) * 12));
-    eggTop.style.setProperty('--background-translation', `${adjustedTranslation}px`);
-    document.removeEventListener('pointermove', pointerMoveHandler);
-    document.removeEventListener('pointerup', pointerUpHandler);
-  };
+for (i = 0; i < count + 1; i++) {
+  console.log(window.localStorage.key(i));
+  let noteTitle = window.localStorage.key(i);
+  let noteBody = window.localStorage.getItem(noteTitle);
+  if (noteTitle !== "count" && noteTitle) {
+    createNote(noteTitle, noteBody);
+  }
+}
 
-  document.addEventListener('pointermove', pointerMoveHandler);
-  document.addEventListener('pointerup', pointerUpHandler);
-});
-
-timerButton.addEventListener('click', () => {
-  isTimerRunning() ? stopTimer() : startTimer();
-});
+document
+  .getElementById("inputForm")
+  .addEventListener("submit", createNoteFromInput, false);
