@@ -4,3 +4,4 @@ A Pen created on CodePen.io. Original URL: [https://codepen.io/sudo-self/pen/jOJ
 <br>
 
 ![Screenshot 2023-12-31 at 12 45 09 AM](https://github.com/sudo-self/oh-stick/assets/119916323/f4a72a1f-6472-4746-b179-2099a52f369a)
+![Screenshot 2024-01-07 at 3 53 44 PM](https://github.com/sudo-self/oh-stick/assets/119916323/2d38b969-408c-4977-9732-a4de3b03e126)
