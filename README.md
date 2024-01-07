@@ -1,4 +1,4 @@
-# <a href="https://oh-stick.jessejesse.com">oh-stick-magna</a>&nbsp;[![Deploy static content to Pages](https://github.com/sudo-self/oh-stick/actions/workflows/static.yml/badge.svg)](https://github.com/sudo-self/oh-stick/actions/workflows/static.yml)<hr>
+# <a href="https://oh-stick.jessejesse.com">oh-stick-codepen</a>&nbsp;[![Deploy static content to Pages](https://github.com/sudo-self/oh-stick/actions/workflows/static.yml/badge.svg)](https://github.com/sudo-self/oh-stick/actions/workflows/static.yml)<hr>
 
 A Pen created on CodePen.io. Original URL: [https://codepen.io/sudo-self/pen/jOJbNdV](https://codepen.io/sudo-self/pen/jOJbNdV).
 <br>
